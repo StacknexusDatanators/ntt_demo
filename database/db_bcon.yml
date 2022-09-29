@@ -1,0 +1,11 @@
+version: v1
+name: nttdemodb                                     # database name
+type: database
+description: NTT demo database
+tags:
+  - database
+database:
+  migrate:
+    includes:
+      - ./database/migrations
+    command: up

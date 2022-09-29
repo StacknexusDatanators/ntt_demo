@@ -1,0 +1,18 @@
+version: v1
+name: ntt-demo-service
+type: service
+service:
+  title: Streamlit Demo for NTT Data
+  replicas: 1
+  servicePort: 8501
+  ingress:
+    enabled: true
+    noAuthentication: true
+    path: /ntt_demo
+    stripPath: true
+  stack: alpha
+  compute: runnable-default
+  envs:
+    LOG_LEVEL: info
+  alpha:
+    image: sndatanator/ntt_demo:v1.0
